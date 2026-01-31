@@ -1,0 +1,195 @@
+% BibTeX文献管理ファイル
+%
+% 使い方:
+% - 論文を見つけたらここにBibTeXエントリを追加
+% - Google ScholarやDBLPからBibTeXをコピー可能
+% - notes/ディレクトリに対応する要約メモを作成
+
+% =============================================================================
+% 自分の過去の研究
+% =============================================================================
+
+@inproceedings{semura2017ccfindersw,
+  author    = {Semura, Yuichi and others},
+  title     = {{CCFinderSW}: Clone Detection Tool with Flexible Multilingual Tokenization},
+  booktitle = {Proceedings of ...},
+  year      = {2017},
+  note      = {TODO: 正確な書誌情報を追加}
+}
+
+% =============================================================================
+% LLMによるクローン検出（LLMを検出器として使う）
+% =============================================================================
+
+@article{zhu2025empirical,
+  author    = {Zhu, Wenqing and others},
+  title     = {An Empirical Study of {LLM}-Based Code Clone Detection},
+  journal   = {arXiv preprint arXiv:2511.01176},
+  year      = {2025},
+  url       = {https://arxiv.org/abs/2511.01176},
+  note      = {5つのLLMを7データセットで評価。o3-miniがF1=0.943。汎化性能に課題}
+}
+
+@article{assessing2024gpt,
+  author    = {Unknown},
+  title     = {Assessing the Code Clone Detection Capability of Large Language Models},
+  journal   = {arXiv preprint arXiv:2407.02402},
+  year      = {2024},
+  url       = {https://arxiv.org/abs/2407.02402},
+  note      = {GPT-4はLLM生成コードのクローン検出が得意。Type-4は苦手}
+}
+
+@article{struggles2024crosslingual,
+  author    = {Unknown},
+  title     = {The Struggles of {LLMs} in Cross-lingual Code Clone Detection},
+  journal   = {arXiv preprint arXiv:2408.04430},
+  year      = {2024},
+  url       = {https://arxiv.org/abs/2408.04430},
+  note      = {多言語クローン検出ではembeddingモデルがLLMを上回る}
+}
+
+@article{investigating2024efficacy,
+  author    = {Unknown},
+  title     = {Investigating the Efficacy of Large Language Models for Code Clone Detection},
+  journal   = {arXiv preprint arXiv:2401.13802},
+  year      = {2024},
+  url       = {https://arxiv.org/abs/2401.13802},
+  note      = {ChatGPTで多言語Type-4検出、F1=0.877達成}
+}
+
+@article{hyclone2025,
+  author    = {Unknown},
+  title     = {{HyClone}: Bridging {LLM} Understanding and Dynamic Execution for Semantic Code Clone Detection},
+  journal   = {arXiv preprint arXiv:2508.01357},
+  year      = {2025},
+  url       = {https://arxiv.org/abs/2508.01357},
+  note      = {テストケース実行で機能的等価性を検証}
+}
+
+@article{selecting2025combining,
+  author    = {Unknown},
+  title     = {Selecting and Combining Large Language Models for Scalable Code Clone Detection},
+  journal   = {arXiv preprint arXiv:2510.15480},
+  year      = {2025},
+  url       = {https://arxiv.org/abs/2510.15480},
+  note      = {76のLLMを評価。アンサンブルで精度46.91%向上}
+}
+
+% =============================================================================
+% LLMのmemorization・訓練データ抽出
+% =============================================================================
+
+@inproceedings{carlini2021extracting,
+  author    = {Carlini, Nicholas and Tramer, Florian and Wallace, Eric and Jagielski, Matthew and Herbert-Voss, Ariel and Lee, Katherine and Roberts, Adam and Brown, Tom and Song, Dawn and Erlingsson, Ulfar and others},
+  title     = {Extracting Training Data from Large Language Models},
+  booktitle = {USENIX Security Symposium},
+  year      = {2021},
+  url       = {https://arxiv.org/abs/2012.07805},
+  note      = {基礎論文。GPT-2から訓練データ（コード含む）を抽出可能と実証}
+}
+
+@article{landscape2025memorization,
+  author    = {Unknown},
+  title     = {The Landscape of Memorization in {LLMs}: Mechanisms, Measurement, and Mitigation},
+  journal   = {arXiv preprint arXiv:2507.05578},
+  year      = {2025},
+  url       = {https://arxiv.org/abs/2507.05578},
+  note      = {memorization研究のSoK。大きいモデルほど記憶しやすい}
+}
+
+@article{memhunter2024,
+  author    = {Unknown},
+  title     = {{MemHunter}: Automated and Verifiable Memorization Detection at Dataset-scale in {LLMs}},
+  journal   = {arXiv preprint arXiv:2412.07261},
+  year      = {2024},
+  url       = {https://arxiv.org/abs/2412.07261},
+  note      = {自動memorization検出。既存手法より40%多くデータ抽出}
+}
+
+@article{malicious2025disclosure,
+  author    = {Unknown},
+  title     = {Malicious and Unintentional Disclosure Risks in Large Language Models for Code Generation},
+  journal   = {arXiv preprint arXiv:2503.22760},
+  year      = {2025},
+  url       = {https://arxiv.org/abs/2503.22760},
+  note      = {コード特化。意図しない情報漏洩リスクを分析}
+}
+
+@article{specialcharacters2024attack,
+  author    = {Unknown},
+  title     = {Special Characters Attack: Toward Scalable Training Data Extraction From Large Language Models},
+  journal   = {arXiv preprint arXiv:2405.05990},
+  year      = {2024},
+  url       = {https://arxiv.org/abs/2405.05990},
+  note      = {特殊文字攻撃でコード・Webページ・PII抽出}
+}
+
+@article{retracing2025past,
+  author    = {Unknown},
+  title     = {Retracing the Past: {LLMs} Emit Training Data When They Get Lost},
+  journal   = {arXiv preprint arXiv:2511.05518},
+  year      = {2025},
+  url       = {https://arxiv.org/abs/2511.05518},
+  note      = {Confusion-Inducing Attacks (CIA)でmemorizedデータ抽出}
+}
+
+% =============================================================================
+% LLM生成コードの検出・透かし
+% =============================================================================
+
+@article{acw2024watermark,
+  author    = {Unknown},
+  title     = {{ACW}: Efficient and Universal Watermarking for {LLM}-Generated Code Detection},
+  journal   = {arXiv preprint arXiv:2402.07518},
+  year      = {2024},
+  url       = {https://arxiv.org/abs/2402.07518},
+  note      = {AST変換ベースの透かし。学習不要で汎用的}
+}
+
+@inproceedings{robustness2024watermark,
+  author    = {Unknown},
+  title     = {Is the Watermarking of {LLM}-Generated Code Robust?},
+  booktitle = {ICLR},
+  year      = {2024},
+  url       = {https://arxiv.org/abs/2403.17983},
+  note      = {透かしの頑健性を検証。AST操作で除去可能}
+}
+
+@article{stone2025watermark,
+  author    = {Unknown},
+  title     = {{STONE}: Syntax-Aware Code Watermarking for Detecting {LLM}-Generated Code},
+  journal   = {arXiv preprint arXiv:2502.18851},
+  year      = {2025},
+  url       = {https://arxiv.org/abs/2502.18851},
+  note      = {構文トークンを避けて透かしを入れる手法}
+}
+
+@article{paraphrased2025detection,
+  author    = {Unknown},
+  title     = {Detection of {LLM}-Paraphrased Code and Identification of the Responsible {LLM} Using Coding Style Features},
+  journal   = {arXiv preprint arXiv:2502.17749},
+  year      = {2025},
+  url       = {https://arxiv.org/abs/2502.17749},
+  note      = {コーディングスタイル特徴でLLM生成コードを識別}
+}
+
+@article{sok2024watermark,
+  author    = {Unknown},
+  title     = {{SoK}: Watermarking for {AI}-Generated Content},
+  journal   = {arXiv preprint arXiv:2411.18479},
+  year      = {2024},
+  url       = {https://arxiv.org/abs/2411.18479},
+  note      = {AI生成コンテンツ透かしのSoK。zero-shot vs training-based}
+}
+
+% =============================================================================
+% コードクローン検出（古典的手法・比較対象）
+% =============================================================================
+
+% TODO: CCFinder, SourcererCC, NiCad等の基礎論文を追加
+
+% =============================================================================
+% LLMコード生成全般
+% =============================================================================
+
+% TODO: Copilot, CodeLlama, StarCoder等の基礎論文を追加
