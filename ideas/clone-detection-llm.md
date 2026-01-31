@@ -44,22 +44,40 @@
 - 生成コードと学習データの対応を推定
 - ライセンス違反リスクの自動検出
 
-## 関連研究（TODO: 論文を読んで追記）
+## 関連研究（2025年1月更新）
 
-- [ ] LLMのmemorization問題
-- [ ] Copilotの著作権訴訟関連
-- [ ] コードクローン検出の最新手法
-- [ ] AI生成テキスト検出（コード版はあるか？）
+- [x] LLMのmemorization問題 → `02-memorization.md`
+- [x] Copilotの著作権訴訟関連 → `04-copilot-lawsuit.md`
+- [x] コードクローン検出の最新手法 → `01-llm-clone-detection.md`
+- [x] AI生成テキスト検出（コード版はあるか？） → `05-ai-code-detection-2025.md`
+- [x] コード透かし研究 → `06-code-watermarking-2025.md`
+- [x] CCFinderSWの引用状況 → `07-ccfindersw-citations.md`
+
+### 主要な知見
+
+1. **LLM生成コードの特徴**: コーディングスタイル（命名規則、インデント、コメント）でLLM生成を識別可能（LPcode論文）
+2. **CCFinderSWの課題**: Type-3クローン非対応が複数論文で指摘される
+3. **研究ギャップ**: トークンベース手法をLLM生成コードに適用した研究は見当たらない
+4. **透かしの脆弱性**: 変数名変更・難読化でTPR<50%に低下 → 代替アプローチが必要
 
 ## 実現可能性メモ
 
 - 強み: CCFinderSWの経験、トークナイザの知見
 - 必要なもの: LLM API アクセス、計算リソース、評価用データセット
 - 時間軸: 1〜2年
+- **追加の強み**: CCFinder Retrospective論文（TSE 2025）でCCFinderファミリーの影響力が再確認された
+
+## CCFinderSW引用分析からの示唆
+
+- SolaSim等でベースラインとして使用されている
+- Type-3対応が弱点として指摘 → 意味的類似度の追加で改善可能
+- LLM生成コードへの適用は**未開拓**（引用論文にそのような研究なし）
 
 ## 次のアクション
 
-1. [ ] arXiv/Google Scholarで関連論文を10本程度収集
-2. [ ] Copilot訴訟の詳細を調査
-3. [ ] 既存のLLMコード検出研究があるか確認
-4. [ ] 小規模な予備実験のデザイン
+1. [x] arXiv/Google Scholarで関連論文を10本程度収集
+2. [x] Copilot訴訟の詳細を調査
+3. [x] 既存のLLMコード検出研究があるか確認
+4. [ ] LPcode論文を詳細に読む（コーディングスタイル特徴の抽出方法）
+5. [ ] DetectCodeGPT（ICSE 2025）を読む
+6. [ ] 小規模な予備実験のデザイン（Copilot/ChatGPT生成コード + CCFinderSW）
