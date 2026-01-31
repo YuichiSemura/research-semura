@@ -52,6 +52,8 @@
 - [x] AI生成テキスト検出（コード版はあるか？） → `05-ai-code-detection-2025.md`
 - [x] コード透かし研究 → `06-code-watermarking-2025.md`
 - [x] CCFinderSWの引用状況 → `07-ccfindersw-citations.md`
+- [x] LPcode詳細分析 → `08-lpcode-detailed.md`
+- [x] DetectCodeGPT詳細分析 → `09-detectcodegpt-detailed.md`
 
 ### 主要な知見
 
@@ -78,6 +80,36 @@
 1. [x] arXiv/Google Scholarで関連論文を10本程度収集
 2. [x] Copilot訴訟の詳細を調査
 3. [x] 既存のLLMコード検出研究があるか確認
-4. [ ] LPcode論文を詳細に読む（コーディングスタイル特徴の抽出方法）
-5. [ ] DetectCodeGPT（ICSE 2025）を読む
+4. [x] LPcode論文を詳細に読む → `08-lpcode-detailed.md`
+5. [x] DetectCodeGPT（ICSE 2025）を読む → `09-detectcodegpt-detailed.md`
 6. [ ] 小規模な予備実験のデザイン（Copilot/ChatGPT生成コード + CCFinderSW）
+
+## LPcode・DetectCodeGPTからの具体的示唆
+
+### CCFinderSWに応用可能な特徴（LPcodeより）
+
+| 特徴 | CCFinderSWでの実装可能性 |
+|------|------------------------|
+| コメント比率 | ◎ トークナイザでコメントトークンをカウント |
+| 命名規則（snake_case等） | ◎ 識別子トークンの分類 |
+| インデント一貫性 | ○ 字句解析レベルで計測 |
+| 関数長 | ○ トークン数で近似可能 |
+
+### スタイリスティックトークン活用（DetectCodeGPTより）
+
+- 空白・改行パターンは通常のクローン検出で**正規化されて消える**
+- LLM生成判定には**保持するオプション**が有効
+- CCFinderSWの前処理に「スタイル保持モード」を追加する案
+
+### 統合ツールの構想
+
+```
+[入力コード]
+    ↓
+[CCFinderSW拡張版]
+    ├── クローンペア検出（従来機能）
+    ├── LLM生成判定（LPcodedec特徴）
+    └── 生成元LLM推定（Task 2）
+    ↓
+[出力: クローン情報 + LLM生成確率 + 推定LLM]
+```
